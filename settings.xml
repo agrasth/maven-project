@@ -7,31 +7,98 @@
     <!-- Local repository path -->
     <localRepository>${user.home}/.m2/repository</localRepository>
 
-    <!-- Server authentication (update with your credentials) -->
+    <!-- Server authentication - UPDATE THESE VALUES -->
     <servers>
         <server>
-            <id>YOUR_SERVER_ID</id>
+            <id>YOUR_REPO_NAME-flex-local</id>
+            <username>YOUR_USERNAME</username>
+            <password>YOUR_PASSWORD</password>
+        </server>
+        <server>
+            <id>YOUR_REPO_NAME-flex-local-snapshots</id>
+            <username>YOUR_USERNAME</username>
+            <password>YOUR_PASSWORD</password>
+        </server>
+        <server>
+            <id>YOUR_REPO_NAME-flex-virtual</id>
             <username>YOUR_USERNAME</username>
             <password>YOUR_PASSWORD</password>
         </server>
     </servers>
 
-    <!-- Profiles -->
+    <!-- Mirror configuration for Artifactory -->
+    <mirrors>
+        <mirror>
+            <id>artifactory-mirror</id>
+            <mirrorOf>central</mirrorOf>
+            <name>Artifactory Maven Virtual Repository</name>
+            <url>YOUR_ARTIFACTORY_URL/YOUR_REPO_NAME-flex-virtual</url>
+        </mirror>
+    </mirrors>
+
+    <!-- Profile for Artifactory repositories with Maven Central fallback -->
     <profiles>
         <profile>
-            <id>default</id>
+            <id>artifactory</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <repositories>
+                <repository>
+                    <id>YOUR_REPO_NAME-flex-virtual</id>
+                    <url>YOUR_ARTIFACTORY_URL/YOUR_REPO_NAME-flex-virtual</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                </repository>
+                <!-- Maven Central as fallback -->
                 <repository>
                     <id>central</id>
                     <url>https://repo1.maven.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
                 </repository>
             </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>YOUR_REPO_NAME-flex-virtual</id>
+                    <url>YOUR_ARTIFACTORY_URL/YOUR_REPO_NAME-flex-virtual</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <!-- Maven Central for plugins as fallback -->
+                <pluginRepository>
+                    <id>central-plugins</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
 
     <!-- Active profiles -->
     <activeProfiles>
-        <activeProfile>default</activeProfile>
+        <activeProfile>artifactory</activeProfile>
     </activeProfiles>
 
 </settings>

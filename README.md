@@ -61,7 +61,33 @@ mvn exec:java -Dexec.mainClass="com.example.App"
 
 ## Configuration
 
-The project includes a `settings.xml` template for Maven configuration. Update it with your repository settings as needed.
+### 1. Update Project Configuration
+
+Edit the following files and replace the placeholders:
+
+**In `pom.xml` and `settings.xml`:**
+- `YOUR_REPO_NAME` - Your repository name (e.g., `myproject`)
+- `YOUR_ARTIFACTORY_URL` - Your Artifactory URL (e.g., `https://mycompany.jfrog.io/artifactory`)
+- `YOUR_USERNAME` - Your Artifactory username
+- `YOUR_PASSWORD` - Your Artifactory password
+
+### 2. Required Artifactory Repositories
+
+Create these repositories in your Artifactory instance:
+- `YOUR_REPO_NAME-flex-local` - Local repository for releases
+- `YOUR_REPO_NAME-flex-virtual` - Virtual repository (includes local + Maven Central)
+
+### 3. Maven Settings
+
+Copy the `settings.xml` to your Maven configuration:
+
+```bash
+# Option 1: Copy to global Maven settings
+cp settings.xml ~/.m2/settings.xml
+
+# Option 2: Use project-specific settings (recommended for testing)
+mvn compile -s settings.xml
+```
 
 ## License
 

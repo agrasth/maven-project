@@ -87,14 +87,14 @@
 
     <distributionManagement>
         <repository>
-            <id>central</id>
-            <name>Maven Central Repository</name>
-            <url>https://repo1.maven.org/maven2</url>
+            <id>YOUR_REPO_NAME-flex-local</id>
+            <name>YOUR_REPO_NAME-flex-local</name>
+            <url>YOUR_ARTIFACTORY_URL/YOUR_REPO_NAME-flex-local</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <name>Maven Snapshots Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>YOUR_REPO_NAME-flex-local-snapshots</id>
+            <name>YOUR_REPO_NAME-flex-local-snapshots</name>
+            <url>YOUR_ARTIFACTORY_URL/YOUR_REPO_NAME-flex-local</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
