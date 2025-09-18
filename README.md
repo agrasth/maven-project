@@ -67,13 +67,14 @@ Edit the following files and replace the placeholders:
 
 **In `pom.xml` and `settings.xml`:**
 - `YOUR_REPO_NAME` - Your repository name (e.g., `myproject`)
-- `YOUR_ARTIFACTORY_URL` - Your Artifactory URL (e.g., `https://mycompany.jfrog.io/artifactory`)
-- `YOUR_USERNAME` - Your Artifactory username
+- `YOUR_USERNAME` - Your Artifactory username  
 - `YOUR_PASSWORD` - Your Artifactory password
+
+**Note:** This project is preconfigured to use `https://ecosysjfrog.jfrog.io/artifactory`
 
 ### 2. Required Artifactory Repositories
 
-Create these repositories in your Artifactory instance:
+Create these repositories in https://ecosysjfrog.jfrog.io/:
 - `YOUR_REPO_NAME-flex-local` - Local repository for releases
 - `YOUR_REPO_NAME-flex-virtual` - Virtual repository (includes local + Maven Central)
 
