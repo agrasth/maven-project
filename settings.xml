@@ -1,105 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Maven Settings for JFrog Artifactory Integration
-This file should be placed in ~/.m2/settings.xml or used with -s flag
--->
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
           http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-    <!-- Server configurations for Artifactory -->
+    <!-- Local repository path -->
+    <localRepository>${user.home}/.m2/repository</localRepository>
+
+    <!-- Server authentication (update with your credentials) -->
     <servers>
         <server>
-            <id>maven-flexpack-local</id>
-            <username>agrasth</username>
-            <password>Naman123!</password>
-        </server>
-        <server>
-            <id>maven-flexpack-local-snapshots</id>
-            <username>agrasth</username>
-            <password>Naman123!</password>
-        </server>
-        <server>
-            <id>maven-flexpack-virtual</id>
-            <username>agrasth</username>
-            <password>Naman123!</password>
+            <id>YOUR_SERVER_ID</id>
+            <username>YOUR_USERNAME</username>
+            <password>YOUR_PASSWORD</password>
         </server>
     </servers>
 
-    <!-- Mirror configuration for Artifactory (optional - for dependency resolution) -->
-    <mirrors>
-        <mirror>
-            <id>artifactory-mirror</id>
-            <mirrorOf>central</mirrorOf>
-            <name>Artifactory Maven Virtual Repository</name>
-            <url>https://ecosysjfrog.jfrog.io/artifactory/maven-flexpack-virtual</url>
-        </mirror>
-    </mirrors>
-
-    <!-- Profile for Artifactory repositories with Maven Central fallback -->
+    <!-- Profiles -->
     <profiles>
         <profile>
-            <id>artifactory</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>default</id>
             <repositories>
-                <repository>
-                    <id>maven-flexpack-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/artifactory/maven-flexpack-virtual</url>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>daily</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                        <checksumPolicy>warn</checksumPolicy>
-                    </snapshots>
-                </repository>
-                <!-- Maven Central as fallback -->
                 <repository>
                     <id>central</id>
                     <url>https://repo1.maven.org/maven2</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
                 </repository>
             </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>maven-flexpack-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/artifactory/maven-flexpack-virtual</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </pluginRepository>
-                <!-- Maven Central for plugins as fallback -->
-                <pluginRepository>
-                    <id>central-plugins</id>
-                    <url>https://repo1.maven.org/maven2</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </pluginRepository>
-            </pluginRepositories>
         </profile>
     </profiles>
 
     <!-- Active profiles -->
     <activeProfiles>
-        <activeProfile>artifactory</activeProfile>
+        <activeProfile>default</activeProfile>
     </activeProfiles>
 
 </settings>

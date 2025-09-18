@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jfrog.test</groupId>
-    <artifactId>test-maven-project</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>maven-project</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>JFrog CLI Maven Test Project</name>
-    <description>A test Maven project for validating JFrog CLI Maven integration with FlexPack</description>
-    <url>https://github.com/jfrog/jfrog-cli</url>
+    <name>Sample Maven Project</name>
+    <description>A simple Maven project for testing and demonstration</description>
+    <url>https://github.com/agrasth/maven-project</url>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -82,20 +82,19 @@
                 <version>3.0.0</version>
             </plugin>
             
-            <!-- Source and Javadoc plugins temporarily removed for traditional Maven test -->
         </plugins>
     </build>
 
     <distributionManagement>
         <repository>
-            <id>maven-flexpack-local</id>
-            <name>maven-flexpack-local</name>
-            <url>https://ecosysjfrog.jfrog.io/artifactory/maven-flexpack-local</url>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.org/maven2</url>
         </repository>
         <snapshotRepository>
-            <id>maven-flexpack-local-snapshots</id>
-            <name>maven-flexpack-local-snapshots</name>
-            <url>https://ecosysjfrog.jfrog.io/artifactory/maven-flexpack-local</url>
+            <id>snapshots</id>
+            <name>Maven Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
