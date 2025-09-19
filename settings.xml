@@ -32,7 +32,7 @@
             <id>artifactory-mirror</id>
             <mirrorOf>central</mirrorOf>
             <name>Artifactory Maven Virtual Repository</name>
-            <url>https://ecosysjfrog.jfrog.io/artifactory/YOUR_REPO_NAME-flex-virtual</url>
+            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
         </mirror>
     </mirrors>
 
@@ -46,7 +46,7 @@
             <repositories>
                 <repository>
                     <id>YOUR_REPO_NAME-flex-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/artifactory/YOUR_REPO_NAME-flex-virtual</url>
+                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>daily</updatePolicy>
@@ -73,7 +73,7 @@
             <pluginRepositories>
                 <pluginRepository>
                     <id>YOUR_REPO_NAME-flex-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/artifactory/YOUR_REPO_NAME-flex-virtual</url>
+                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
