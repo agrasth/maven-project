@@ -87,14 +87,14 @@
 
     <distributionManagement>
         <repository>
-            <id>YOUR_REPO_NAME-flex-local</id>
-            <name>YOUR_REPO_NAME-flex-local</name>
-            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-local</url>
+            <id>YOUR_REPO_NAME</id>
+            <name>YOUR_REPO_NAME</name>
+            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME</url>
         </repository>
         <snapshotRepository>
-            <id>YOUR_REPO_NAME-flex-local-snapshots</id>
-            <name>YOUR_REPO_NAME-flex-local-snapshots</name>
-            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-local</url>
+            <id>YOUR_REPO_NAME-snapshots</id>
+            <name>YOUR_REPO_NAME-snapshots</name>
+            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME</url>
         </snapshotRepository>
     </distributionManagement>
 </project>

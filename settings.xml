@@ -10,17 +10,17 @@
     <!-- Server authentication - UPDATE THESE VALUES -->
     <servers>
         <server>
-            <id>YOUR_REPO_NAME-flex-local</id>
+            <id>YOUR_REPO_NAME</id>
             <username>YOUR_USERNAME</username>
             <password>YOUR_PASSWORD</password>
         </server>
         <server>
-            <id>YOUR_REPO_NAME-flex-local-snapshots</id>
+            <id>YOUR_REPO_NAME-snapshots</id>
             <username>YOUR_USERNAME</username>
             <password>YOUR_PASSWORD</password>
         </server>
         <server>
-            <id>YOUR_REPO_NAME-flex-virtual</id>
+            <id>YOUR_REPO_NAME-virtual</id>
             <username>YOUR_USERNAME</username>
             <password>YOUR_PASSWORD</password>
         </server>
@@ -32,7 +32,7 @@
             <id>artifactory-mirror</id>
             <mirrorOf>central</mirrorOf>
             <name>Artifactory Maven Virtual Repository</name>
-            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
+            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-virtual</url>
         </mirror>
     </mirrors>
 
@@ -45,8 +45,8 @@
             </activation>
             <repositories>
                 <repository>
-                    <id>YOUR_REPO_NAME-flex-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
+                    <id>YOUR_REPO_NAME-virtual</id>
+                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-virtual</url>
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>daily</updatePolicy>
@@ -72,8 +72,8 @@
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>YOUR_REPO_NAME-flex-virtual</id>
-                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-flex-virtual</url>
+                    <id>YOUR_REPO_NAME-virtual</id>
+                    <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME-virtual</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>

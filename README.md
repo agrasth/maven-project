@@ -75,8 +75,8 @@ Edit the following files and replace the placeholders:
 ### 2. Required Artifactory Repositories
 
 Create these repositories in https://ecosysjfrog.jfrog.io/:
-- `YOUR_REPO_NAME-flex-local` - Local repository for releases
-- `YOUR_REPO_NAME-flex-virtual` - Virtual repository (includes local + Maven Central)
+- `YOUR_REPO_NAME` - Local repository for releases
+- `YOUR_REPO_NAME-virtual` - Virtual repository (includes local + Maven Central)
 
 ### 3. Maven Settings
 
