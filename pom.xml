@@ -89,12 +89,12 @@
         <repository>
             <id>YOUR_REPO_NAME</id>
             <name>YOUR_REPO_NAME</name>
-            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME</url>
+            <url>https://ecosysjfrog.jfrog.io/artifactory/YOUR_REPO_NAME</url>
         </repository>
         <snapshotRepository>
             <id>YOUR_REPO_NAME-snapshots</id>
             <name>YOUR_REPO_NAME-snapshots</name>
-            <url>https://ecosysjfrog.jfrog.io/YOUR_REPO_NAME</url>
+            <url>https://ecosysjfrog.jfrog.io/artifactory/YOUR_REPO_NAME</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
